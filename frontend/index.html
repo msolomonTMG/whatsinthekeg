@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Whatsinthekeg</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <!--Facebook stuff-->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=864912060217573&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Navigation
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#top">Start Bootstrap</a>
+            </li>
+            <li>
+                <a href="#top">Home</a>
+            </li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#services">Services</a>
+            </li>
+            <li>
+                <a href="#portfolio">Portfolio</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    -->
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">What's in the Keg?</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="container" style="margin-top:30px;">
+        <div class="text-vertical-center">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <span class="pull-left" data-toggle="tooltip" data-placement="bottom" title="On tap since">
+                                    <i class="fa fa-calendar-o"></i> <span id="techBeerTime"></span>
+                                </span>
+                            </div>
+                            <div class="col-xs-4">
+                                Tech
+                            </div>
+                            <div class="col-xs-4">
+                                <span class="pull-right">
+                                    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                                </span>
+                            </div>  
+                        </div>                
+                    </div>
+                    <div class="panel-body">
+                        <h4 id="techBeerName">Awesome beer</h4> 
+                        <div class="portfolio-item">
+                            <a href="#" id="techBeerSite" target="_blank">
+                                <img id="techBeerImg" class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel-footer" style="overflow:hidden;">
+                        <div class="fb-comments" data-href="http://developers.facebook.com/docs/plugins/comments/" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <span class="pull-left" data-toggle="tooltip" data-placement="bottom" title="On tap since">
+                                    <i class="fa fa-calendar-o"></i> <span id="editBeerTime"></span>
+                                </span>
+                            </div>
+                            <div class="col-xs-4">
+                                Edit
+                            </div>
+                            <div class="col-xs-4">
+                                <span class="pull-right">
+                                    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                                </span>
+                            </div>  
+                        </div>   
+                    </div>
+                    <div class="panel-body">
+                        <h4 id="editBeerName">Awesome beer</h4> 
+                        <div class="portfolio-item">
+                            <a href="#" id="editBeerSite" target="_blank">
+                                <img id="editBeerImg" class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel-footer" style="overflow:hidden;">
+                        <div class="fb-comments" data-href="http://developers.facebook.com/docs/plugins/comments/" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </header>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    var beers;
+
+    $.ajax({
+        url: 'http://5c2605d6.ngrok.com/beer',
+        type: 'get',
+        async: false,
+        success: function(data) {
+            console.log(data);
+            beers = data;
+        } 
+    });
+
+    var i = 0;
+    while (i < beers.length){
+        if (beers[i].currentTechBeer == "true"){
+            var techBeer = beers[i];
+            techBeer.time = new Date((beers[i].updatedAt || "").replace(/-/g,"/").replace(/[TZ]/g," ")).toString();;
+            $('#techBeerName').html(techBeer.name);
+            $('#techBeerImg').attr("src",techBeer.imgurl);
+            $('#techBeerSite').attr("href", techBeer.website);
+            $('#techBeerTime').html(techBeer.time.split(' 2015')[0]);
+        }
+        else if(beers[i].currentEditBeer == "true"){
+            var editBeer = beers[i];
+            editBeer.time = new Date((beers[i].updatedAt || "").replace(/-/g,"/").replace(/[TZ]/g," ")).toString();;
+            $('#editBeerName').html(editBeer.name);
+            $('#editBeerImg').attr("src",editBeer.imgurl);
+            $('#editBeerSite').attr("href", editBeer.website);
+            $('#editBeerTime').html(editBeer.time.split(' 2015')[0]);
+        }
+        i++;
+    }
+
+    //tool tips
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+</body>
+
+</html>
