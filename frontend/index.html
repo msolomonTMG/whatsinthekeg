@@ -87,7 +87,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
+                <li><a href="#"><i class="fa fa-heart"></i> Favorites</a></li>
                 <li><a href="#">Another action</a></li>
                 <li><a href="#">Something else here</a></li>
                 <li class="divider"></li>
@@ -101,7 +101,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
+                <li><a href="#"><i class="fa fa-heart"></i> Favorites</a></li>
                 <li><a href="#">Another action</a></li>
                 <li><a href="#">Something else here</a></li>
                 <li class="divider"></li>
@@ -132,8 +132,8 @@
                                 Tech
                             </div>
                             <div class="col-xs-4">
-                                <span class="pull-right">
-                                    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                                <span class="pull-right" id="techBeerLikesPosition">
+
                                 </span>
                             </div>  
                         </div>                
@@ -146,8 +146,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="panel-footer" style="overflow:hidden;">
-                        <div class="fb-comments" data-href="http://developers.facebook.com/docs/plugins/comments/" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
+                    <div class="panel-footer" id="techBeerCommentsPosition" style="overflow:hidden;">
+
                     </div>
                 </div>
             </div>
@@ -164,8 +164,8 @@
                                 Edit
                             </div>
                             <div class="col-xs-4">
-                                <span class="pull-right">
-                                    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                                <span class="pull-right" id="editBeerLikesPosition">
+                                    
                                 </span>
                             </div>  
                         </div>   
@@ -178,8 +178,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="panel-footer" style="overflow:hidden;">
-                        <div class="fb-comments" data-href="http://developers.facebook.com/docs/plugins/comments/" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
+                    <div class="panel-footer" id="editBeerCommentsPosition" style="overflow:hidden;">
+                        
                     </div>
                 </div>
             </div>
@@ -216,6 +216,14 @@
             $('#techBeerImg').attr("src",techBeer.imgurl);
             $('#techBeerSite').attr("href", techBeer.website);
             $('#techBeerTime').html(techBeer.time.split(' 2015')[0]);
+            
+            //Build social stuff
+            var $techBeerLikes = $("<div>", {id: 'techBeerLikes', class: 'fb-like', 'data-href': 'http://5c2605d6.ngrok.com/beer'+techBeer.id, 'data-layout': 'button_count', 'data-action': 'like', 'data-show-faces': 'true', 'data-share':'false'});
+            $('#techBeerLikesPosition').append($techBeerLikes);
+
+            var $techBeerComments = $("<div>", {id: 'techBeerComments', class: 'fb-comments', 'data-href': 'http://5c2605d6.ngrok.com/beer'+editBeer.id, 'data-width': "100%", 'data-numposts':'5', 'data-colorscheme': 'light'});
+            $('#techBeerCommentsPosition').append($techBeerComments);
+
         }
         else if(beers[i].currentEditBeer == "true"){
             var editBeer = beers[i];
@@ -224,6 +232,13 @@
             $('#editBeerImg').attr("src",editBeer.imgurl);
             $('#editBeerSite').attr("href", editBeer.website);
             $('#editBeerTime').html(editBeer.time.split(' 2015')[0]);
+            
+            //Build social stuff
+            var $editBeerLikes = $("<div>", {id: 'editBeerLikes', class: 'fb-like', 'data-href': 'http://5c2605d6.ngrok.com/beer'+editBeer.id, 'data-layout': 'button_count', 'data-action': 'like', 'data-show-faces': 'true', 'data-share':'false'});
+            $('#editBeerLikesPosition').append($editBeerLikes);
+
+            var $editBeerComments = $("<div>", {id: 'editBeerComments', class: 'fb-comments', 'data-href': 'http://5c2605d6.ngrok.com/beer'+editBeer.id, 'data-width': "100%", 'data-numposts':'5', 'data-colorscheme': 'light'});
+            $('#editBeerCommentsPosition').append($editBeerComments);
         }
         i++;
     }

@@ -249,7 +249,7 @@
     function powerOptions(dropdown){
         var i = 0;
         while(i < beers.length){
-            var $option = $("<option>", {id: beers[i].id})
+            var $option = $("<option>", {id: beers[i].id});
             $option.html(beers[i].name);
             addOptionTo(dropdown, $option);
             checkIfCurrent(dropdown, beers[i]);
