@@ -198,7 +198,7 @@
     var beers;
 
     $.ajax({
-        url: 'http://whatsinthekeg.com:1337/beer',
+        url: 'http://whatsinthekeg.ngrok.com/beer',
         type: 'get',
         async: false,
         success: function(data) {
@@ -218,10 +218,10 @@
             $('#techBeerTime').html(techBeer.time.split(' 2015')[0]);
             
             //Build social stuff
-            var $techBeerLikes = $("<div>", {id: 'techBeerLikes', class: 'fb-like', 'data-href': 'http://whatsinthekeg.com:1337/beer'+techBeer.id, 'data-layout': 'button_count', 'data-action': 'like', 'data-show-faces': 'true', 'data-share':'false'});
+            var $techBeerLikes = $("<div>", {id: 'techBeerLikes', class: 'fb-like', 'data-href': 'http://whatsinthekeg.ngrok.com/beer'+techBeer.id, 'data-layout': 'button_count', 'data-action': 'like', 'data-show-faces': 'true', 'data-share':'false'});
             $('#techBeerLikesPosition').append($techBeerLikes);
 
-            var $techBeerComments = $("<div>", {id: 'techBeerComments', class: 'fb-comments', 'data-href': 'http://whatsinthekeg.com:1337/beer'+editBeer.id, 'data-width': "100%", 'data-numposts':'5', 'data-colorscheme': 'light'});
+            var $techBeerComments = $("<div>", {id: 'techBeerComments', class: 'fb-comments', 'data-href': 'http://whatsinthekeg.ngrok.com/beer'+editBeer.id, 'data-width': "100%", 'data-numposts':'5', 'data-colorscheme': 'light'});
             $('#techBeerCommentsPosition').append($techBeerComments);
 
         }
@@ -234,10 +234,10 @@
             $('#editBeerTime').html(editBeer.time.split(' 2015')[0]);
             
             //Build social stuff
-            var $editBeerLikes = $("<div>", {id: 'editBeerLikes', class: 'fb-like', 'data-href': 'http://whatsinthekeg.com:1337/beer'+editBeer.id, 'data-layout': 'button_count', 'data-action': 'like', 'data-show-faces': 'true', 'data-share':'false'});
+            var $editBeerLikes = $("<div>", {id: 'editBeerLikes', class: 'fb-like', 'data-href': 'http://whatsinthekeg.ngrok.com/beer'+editBeer.id, 'data-layout': 'button_count', 'data-action': 'like', 'data-show-faces': 'true', 'data-share':'false'});
             $('#editBeerLikesPosition').append($editBeerLikes);
 
-            var $editBeerComments = $("<div>", {id: 'editBeerComments', class: 'fb-comments', 'data-href': 'http://whatsinthekeg.com:1337/beer'+editBeer.id, 'data-width': "100%", 'data-numposts':'5', 'data-colorscheme': 'light'});
+            var $editBeerComments = $("<div>", {id: 'editBeerComments', class: 'fb-comments', 'data-href': 'http://whatsinthekeg.ngrok.com/beer'+editBeer.id, 'data-width': "100%", 'data-numposts':'5', 'data-colorscheme': 'light'});
             $('#editBeerCommentsPosition').append($editBeerComments);
         }
         i++;
