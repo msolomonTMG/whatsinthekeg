@@ -219,9 +219,81 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Delete a Beer</div>
+                        <div class="panel-body">
+
+                            <div id="deleteBeerConfirmed" style="display:none;">
+                                <div class="row">
+                                    <div clas="container">
+                                        <div class="col-md-12">
+                                            <div class="alert alert-success alert-dismissible" role="alert">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <strong>Good riddance!</strong> Successfully deleted that beer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="deleteBeerFailed" style="display:none;">
+                                <div class="row">
+                                    <div clas="container">
+                                        <div class="col-md-12">
+                                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <strong>Shit!</strong> Something went wrong, couldn't delete that brew!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <select class="form-control" id="deleteBeerOptions">
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="row">
+                                <button type="button" class="btn btn-danger" id="deleteBeerWarning" data-toggle="modal" data-target="#deleteWarningModal">Delete a Beer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
         </div>
     </header>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteWarningModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Are You Sure?</h4>
+          </div>
+          <div class="modal-body">
+            <strong>Dude, chill!</strong> Deleting this beer will delete everything about it including likes, comments, picture links, ever-ree-thang... Are you sure you want to delete it?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Nevermind</button>
+            <button type="button" class="btn btn-danger" id="deleteBeer"><i class="fa fa-trash"></i> Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -246,15 +318,18 @@
     //Power dropdowns
     powerOptions(techBeerOptions);
     powerOptions(editBeerOptions);
+    powerOptions(deleteBeerOptions);
     function powerOptions(dropdown){
         var i = 0;
         while(i < beers.length){
             var $option = $("<option>", {id: beers[i].id});
             $option.html(beers[i].name);
             addOptionTo(dropdown, $option);
-            checkIfCurrent(dropdown, beers[i]);
-            //$('#techBeerOptions').append($option);
-            //$('#editBeerOptions').append($option);
+            
+            if (dropdown != deleteBeerOptions){
+                checkIfCurrent(dropdown, beers[i]);
+            }
+
             i++;
         }
     }
@@ -299,6 +374,23 @@
                 $('#newBeerName').val('');
                 $('#newBeerImage').val('');
                 $('#newBeerWebsite').val('');
+            } 
+        });    
+    });
+
+    //Delete beers
+    $('#deleteBeer').click(function(){
+        var beerID = $('#deleteBeerOptions').children(":selected").attr("id");
+        $.ajax({
+            url: 'http://5c2605d6.ngrok.com/beer/destroy/'+beerID,
+            type: 'get',
+            async: false,
+            success: function(data) {
+                console.log(data);
+                $('#deletedBeerConfirmed').fadeIn();
+            },
+            error: function(data){
+                $('#deleteBeerFailed').fadeIn();
             } 
         });    
     });
@@ -362,6 +454,7 @@
             });
         }
     }
+
 
     //sorts in alphabetical order
     function compare(a,b) {
