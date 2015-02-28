@@ -306,7 +306,7 @@
     var beers;
     //Get all beers
     $.ajax({
-        url: 'http://whatsinthekeg.ngrok.com/beer',
+        url: 'http://whatsinthekeg.com:1337/beer',
         type: 'get',
         async: false,
         success: function(data) {
@@ -359,7 +359,7 @@
         var imgurl = $('#newBeerImage').val();
         var website = $('#newBeerWebsite').val();
         $.ajax({
-            url: 'http://whatsinthekeg.ngrok.com/beer/create/?name='+name+'&imgurl='+imgurl+'&website='+website,
+            url: 'http://whatsinthekeg.com:1337/beer/create/?name='+name+'&imgurl='+imgurl+'&website='+website,
             type: 'get',
             async: false,
             success: function(data) {
@@ -382,7 +382,7 @@
     $('#deleteBeer').click(function(){
         var beerID = $('#deleteBeerOptions').children(":selected").attr("id");
         $.ajax({
-            url: 'http://whatsinthekeg.ngrok.com/beer/destroy/'+beerID,
+            url: 'http://whatsinthekeg.com:1337/beer/destroy/'+beerID,
             type: 'get',
             async: false,
             success: function(data) {
@@ -400,7 +400,7 @@
         removeCurrentBeer("tech");
         var beerID = $('#techBeerOptions').children(":selected").attr("id");
         $.ajax({
-            url: 'http://whatsinthekeg.ngrok.com/beer/update/'+beerID+'?currentTechBeer=true',
+            url: 'http://whatsinthekeg.com:1337/beer/update/'+beerID+'?currentTechBeer=true',
             type: 'get',
             async: false,
             success: function(data) {
@@ -412,7 +412,7 @@
         removeCurrentBeer("edit");
         var beerID = $('#editBeerOptions').children(":selected").attr("id");
         $.ajax({
-            url: 'http://whatsinthekeg.ngrok.com/beer/update/'+beerID+'?currentEditBeer=true',
+            url: 'http://whatsinthekeg.com:1337/beer/update/'+beerID+'?currentEditBeer=true',
             type: 'get',
             async: false,
             success: function(data) {
@@ -437,11 +437,11 @@
             var updateURL = "";
 
             if (floor == "tech"){
-                updateURL = 'http://whatsinthekeg.ngrok.com/beer/update/'+currentBeerID+'?currentTechBeer=false';
+                updateURL = 'http://whatsinthekeg.com:1337/beer/update/'+currentBeerID+'?currentTechBeer=false';
             }
 
             else if (floor == "edit"){
-                updateURL = 'http://whatsinthekeg.ngrok.com/beer/update/'+currentBeerID+'?currentEditBeer=false';
+                updateURL = 'http://whatsinthekeg.com:1337/beer/update/'+currentBeerID+'?currentEditBeer=false';
             }
 
             $.ajax({
