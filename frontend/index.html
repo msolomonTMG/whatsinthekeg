@@ -221,7 +221,7 @@
             var $techBeerLikes = $("<div>", {id: 'techBeerLikes', class: 'fb-like', 'data-href': 'http://whatsinthekeg.com:1337/beer'+techBeer.id, 'data-layout': 'button_count', 'data-action': 'like', 'data-show-faces': 'true', 'data-share':'false'});
             $('#techBeerLikesPosition').append($techBeerLikes);
 
-            var $techBeerComments = $("<div>", {id: 'techBeerComments', class: 'fb-comments', 'data-href': 'http://whatsinthekeg.com:1337/beer'+editBeer.id, 'data-width': "100%", 'data-numposts':'5', 'data-colorscheme': 'light'});
+            var $techBeerComments = $("<div>", {id: 'techBeerComments', class: 'fb-comments', 'data-href': 'http://whatsinthekeg.com:1337/beer'+techBeer.id, 'data-width': "100%", 'data-numposts':'5', 'data-colorscheme': 'light'});
             $('#techBeerCommentsPosition').append($techBeerComments);
 
         }
