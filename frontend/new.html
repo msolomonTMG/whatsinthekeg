@@ -35,10 +35,11 @@
 
 <body>
 
+    <!-- desktop nav -->
     <nav class="navbar navbar-default navbar-fixed-top hidden-sm hidden-xs">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">What's in the Keg?</a>
+          <a class="navbar-brand" href="#">What's in the Keg?</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -59,15 +60,30 @@
       </div>
     </nav>
 
-    <nav class="navbar navbar-default navbar-fixed-top visible-sm visible-xs">
+    <!-- tablet nav -->
+    <nav class="navbar navbar-default navbar-fixed-top visible-sm hidden-xs">
       <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">What's in the Keg?</a>
+            <a class="navbar-brand" href="/">What's in the Keg?</a>
               <ul class="nav navbar-nav list-inline">
                 <li><a href="#"><i class="fa fa-heart"></i> Favorites</a></li>
                 <li><a href="#"><i class="fa fa-history"></i> History</a></li>
                 <li><a href="#"><i class="fa fa-question-circle"></i> What is this</a></li>
               </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- phone nav -->
+    <nav class="navbar navbar-default navbar-fixed-top hidden-sm visible-xs">
+      <div class="container">
+        <div class="row">
+            <a class="navbar-brand" href="/">What's in the Keg?</a>
+            <div class="pull-right">
+                <a class="navbar-brand" href="#"><i class="fa fa-heart"></i></a>
+                <a class="navbar-brand" href="#"><i class="fa fa-history"></i></a>
+                <a class="navbar-brand" href="#"><i class="fa fa-question-circle"></i></a>
+            </div>
         </div>
       </div>
     </nav>
