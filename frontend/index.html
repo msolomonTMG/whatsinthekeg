@@ -116,7 +116,7 @@
                         </div>                
                     </div>
                     <div class="panel-body">
-                        <h4 id="techBeerName">Awesome beer</h4> 
+                        <h4 id="techBeerName">Loading...</h4> 
                         <div class="portfolio-item">
                             <a href="#" id="techBeerSite" target="_blank">
                                 <img id="techBeerImg" class="img-portfolio img-responsive" src="img/loading.gif">
@@ -148,7 +148,7 @@
                         </div>   
                     </div>
                     <div class="panel-body">
-                        <h4 id="editBeerName">Awesome beer</h4> 
+                        <h4 id="editBeerName">Loading...</h4> 
                         <div class="portfolio-item">
                             <a href="#" id="editBeerSite" target="_blank">
                                 <img id="editBeerImg" class="img-portfolio img-responsive" src="img/loading.gif">
@@ -202,7 +202,7 @@
             $('#techBeerCommentsPosition').append($techBeerComments);
 
         }
-        else if(beers[i].currentEditBeer == "true"){
+        if(beers[i].currentEditBeer == "true"){
             var editBeer = beers[i];
             editBeer.time = new Date((beers[i].updatedAt || "").replace(/-/g,"/").replace(/[TZ]/g," ")).toString();;
             $('#editBeerName').html(editBeer.name);
