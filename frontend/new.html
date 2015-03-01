@@ -39,7 +39,7 @@
     <nav class="navbar navbar-default navbar-fixed-top hidden-sm hidden-xs">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">What's in the Keg?</a>
+          <a class="navbar-brand" href="/">What's in the Keg?</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -49,7 +49,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-caret-down"></i></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="#"><i class="fa fa-heart"></i> Favorites</a></li>
-                <li><a href="#"><i class="fa fa-history"></i> History</a></li>
+                <li><a href="/history.html"><i class="fa fa-history"></i> History</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">About</li>
                 <li><a href="#"><i class="fa fa-question-circle"></i> What is this</a></li>
@@ -67,7 +67,7 @@
             <a class="navbar-brand" href="/">What's in the Keg?</a>
               <ul class="nav navbar-nav list-inline">
                 <li><a href="#"><i class="fa fa-heart"></i> Favorites</a></li>
-                <li><a href="#"><i class="fa fa-history"></i> History</a></li>
+                <li><a href="/history.html"><i class="fa fa-history"></i> History</a></li>
                 <li><a href="#"><i class="fa fa-question-circle"></i> What is this</a></li>
               </ul>
         </div>
@@ -81,7 +81,7 @@
             <a class="navbar-brand" href="/">What's in the Keg?</a>
             <div class="pull-right">
                 <a class="navbar-brand" href="#"><i class="fa fa-heart"></i></a>
-                <a class="navbar-brand" href="#"><i class="fa fa-history"></i></a>
+                <a class="navbar-brand" href="/history.html"><i class="fa fa-history"></i></a>
                 <a class="navbar-brand" href="#"><i class="fa fa-question-circle"></i></a>
             </div>
         </div>
@@ -98,18 +98,31 @@
                         <div class="panel-heading">Tech</div>
                         <div class="panel-body">
 
-                            <div id="techBeerUpdated" style="display:none;">
-                                <div class="row">
-                                    <div clas="container">
-                                        <div class="col-md-12">
-                                            <div class="alert alert-success alert-dismissible" role="alert">
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                <strong>Success!</strong> Tech's beer was updated!
-                                            </div>
+                        <!-- Update Success Alert -->
+                            <div class="row">
+                                <div clas="container">
+                                    <div class="col-md-12">
+                                        <div id="techBeerUpdated" class="alert alert-success" hidden="hidden" role="alert">
+                                            <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <strong>Success!</strong> Tech's beer was updated!
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        <!-- End success alert -->
+                    
+                        <!-- Update Failed Alert -->
+                            <div class="row">
+                                <div clas="container">
+                                    <div class="col-md-12">
+                                        <div id="techBeerUpdateFailed" class="alert alert-danger" hidden="hidden" role="alert">
+                                            <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <strong>Shit!</strong> Something went wrong, couldn't update tech's beer!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- End success alert -->
 
                             <form class="form-horizontal">
                                 <div class="form-group">
@@ -132,18 +145,31 @@
                         <div class="panel-heading">Edit</div>
                         <div class="panel-body">
 
-                            <div id="editBeerUpdated" style="display:none;">
-                                <div class="row">
-                                    <div clas="container">
-                                        <div class="col-md-12">
-                                            <div class="alert alert-success alert-dismissible" role="alert">
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                <strong>Success!</strong> Edit's beer was updated!
-                                            </div>
+                        <!-- Update Success Alert -->
+                            <div class="row">
+                                <div clas="container">
+                                    <div class="col-md-12">
+                                        <div id="editBeerUpdated" class="alert alert-success" hidden="hidden" role="alert">
+                                            <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <strong>Success!</strong> Tech's beer was updated!
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        <!-- End success alert -->
+                    
+                        <!-- Update Failed Alert -->
+                            <div class="row">
+                                <div clas="container">
+                                    <div class="col-md-12">
+                                        <div id="editBeerUpdateFailed" class="alert alert-danger" hidden="hidden" role="alert">
+                                            <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <strong>Shit!</strong> Something went wrong, couldn't update tech's beer!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- End success alert -->
 
                             <form class="form-horizontal">
                                 <div class="form-group">
@@ -169,31 +195,32 @@
                         <div class="panel-heading">Add New Beer</div>
                         <div class="panel-body">
 
-                            <div id="newBeerAdded" style="display:none;">
-                                <div class="row">
-                                    <div clas="container">
-                                        <div class="col-md-12">
-                                            <div class="alert alert-success alert-dismissible" role="alert">
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                <strong>Success!</strong> New beer was added!
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div id="newBeerFailed" style="display:none;">
-                                <div class="row">
-                                    <div clas="container">
-                                        <div class="col-md-12">
-                                            <div class="alert alert-danger alert-dismissible" role="alert">
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                <strong>Shit!</strong> Something went wrong, couldn't save that brew!
-                                            </div>
+                        <!-- Update Success Alert -->
+                            <div class="row">
+                                <div clas="container">
+                                    <div class="col-md-12">
+                                        <div id="newBeerAdded" class="alert alert-success" hidden="hidden" role="alert">
+                                            <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <strong>Success!</strong> New beer added!
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        <!-- End success alert -->
+                    
+                        <!-- Update Failed Alert -->
+                            <div class="row">
+                                <div clas="container">
+                                    <div class="col-md-12">
+                                        <div id="newBeerFailed" class="alert alert-danger" hidden="hidden" role="alert">
+                                            <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <strong>Shit!</strong> Something went wrong, couldn't save that brew!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- End success alert -->
 
                             <form class="form-horizontal">
                                 <div class="form-group">
@@ -235,31 +262,31 @@
                         <div class="panel-heading">Delete a Beer</div>
                         <div class="panel-body">
 
-                            <div id="deleteBeerConfirmed" style="display:none;">
-                                <div class="row">
-                                    <div clas="container">
-                                        <div class="col-md-12">
-                                            <div class="alert alert-success alert-dismissible" role="alert">
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                <strong>Good riddance!</strong> Successfully deleted that beer.
-                                            </div>
+                        <!-- Update Success Alert -->
+                            <div class="row">
+                                <div clas="container">
+                                    <div class="col-md-12">
+                                        <div id="deleteBeerConfirmed" class="alert alert-success" hidden="hidden" role="alert">
+                                            <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <strong>Good riddance!</strong> Successfully deleted that beer!
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div id="deleteBeerFailed" style="display:none;">
-                                <div class="row">
-                                    <div clas="container">
-                                        <div class="col-md-12">
-                                            <div class="alert alert-danger alert-dismissible" role="alert">
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                <strong>Shit!</strong> Something went wrong, couldn't delete that brew!
-                                            </div>
+                        <!-- End success alert -->
+                    
+                        <!-- Update Failed Alert -->
+                            <div class="row">
+                                <div clas="container">
+                                    <div class="col-md-12">
+                                        <div id="deleteBeerFailed" class="alert alert-danger" hidden="hidden" role="alert">
+                                            <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <strong>Shit!</strong> Something went wrong, couldn't delete that brew!
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        <!-- End success alert -->
 
                             <form class="form-horizontal">
                                 <div class="form-group">
@@ -297,7 +324,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Nevermind</button>
-            <button type="button" class="btn btn-danger" id="deleteBeer"><i class="fa fa-trash"></i> Delete</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" id="deleteBeer"><i class="fa fa-trash"></i> Delete</button>
           </div>
         </div>
       </div>
@@ -310,25 +337,41 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+    <!-- Datepicker -->
+    <script src="js/whatsinthekeg.js"></script>
+
     <!-- Custom Theme JavaScript -->
     <script>
+
     var beers;
+    initializePage();
+
+    function initializePage(){
+        getAllBeers();
+        powerAllDropdowns();
+    }
+
     //Get all beers
-    $.ajax({
-        url: 'http://whatsinthekeg.com:1337/beer',
-        type: 'get',
-        async: false,
-        success: function(data) {
-            console.log(data);
-            beers = data;
-        } 
-    });
+    function getAllBeers(){
+        $.ajax({
+            url: window.apiURL,
+            type: 'get',
+            async: false,
+            success: function(data) {
+                beers = data;
+            } 
+        });
+    }
 
     //Power dropdowns
-    powerOptions(techBeerOptions);
-    powerOptions(editBeerOptions);
-    powerOptions(deleteBeerOptions);
+    function powerAllDropdowns(){
+        powerOptions(techBeerOptions);
+        powerOptions(editBeerOptions);
+        powerOptions(deleteBeerOptions);
+    }
+
     function powerOptions(dropdown){
+        clearCurrentOptions(dropdown);
         var i = 0;
         while(i < beers.length){
             var $option = $("<option>", {id: beers[i].id});
@@ -340,6 +383,12 @@
             }
 
             i++;
+        }
+    }
+    //Function for clearing the current options of a dropdown
+    function clearCurrentOptions(dropdown){
+        while (dropdown.firstChild) {
+            dropdown.removeChild(dropdown.firstChild);
         }
     }
     //Function for adding onto dropdown
@@ -368,7 +417,7 @@
         var imgurl = $('#newBeerImage').val();
         var website = $('#newBeerWebsite').val();
         $.ajax({
-            url: 'http://whatsinthekeg.com:1337/beer/create/?name='+name+'&imgurl='+imgurl+'&website='+website,
+            url: window.apiURL+'/create/?name='+name+'&imgurl='+imgurl+'&website='+website,
             type: 'get',
             async: false,
             success: function(data) {
@@ -377,6 +426,7 @@
                 $('#newBeerName').val('');
                 $('#newBeerImage').val('');
                 $('#newBeerWebsite').val('');
+                initializePage();
             },
             error: function(data){
                 $('#newBeerFailed').fadeIn();
@@ -391,12 +441,12 @@
     $('#deleteBeer').click(function(){
         var beerID = $('#deleteBeerOptions').children(":selected").attr("id");
         $.ajax({
-            url: 'http://whatsinthekeg.com:1337/beer/destroy/'+beerID,
+            url: window.apiURL+'/destroy/'+beerID,
             type: 'get',
             async: false,
             success: function(data) {
-                console.log(data);
-                $('#deletedBeerConfirmed').fadeIn();
+                $('#deleteBeerConfirmed').fadeIn();
+                initializePage();
             },
             error: function(data){
                 $('#deleteBeerFailed').fadeIn();
@@ -409,24 +459,31 @@
         removeCurrentBeer("tech");
         var beerID = $('#techBeerOptions').children(":selected").attr("id");
         $.ajax({
-            url: 'http://whatsinthekeg.com:1337/beer/update/'+beerID+'?currentTechBeer=true',
+            url: window.apiURL+'/update/'+beerID+'?currentTechBeer=true',
             type: 'get',
             async: false,
             success: function(data) {
                 $('#techBeerUpdated').fadeIn();
-            } 
+            },
+            error: function(data) {
+                $('#techBeerUpdateFailed').fadeIn();
+                console.log(data);
+            }
         });
     });
     $('#updateEditBeer').click(function(){
         removeCurrentBeer("edit");
         var beerID = $('#editBeerOptions').children(":selected").attr("id");
         $.ajax({
-            url: 'http://whatsinthekeg.com:1337/beer/update/'+beerID+'?currentEditBeer=true',
+            url: window.apiURL+'/update/'+beerID+'?currentEditBeer=true',
             type: 'get',
             async: false,
             success: function(data) {
                 $('#editBeerUpdated').fadeIn();
-            } 
+            },
+            error: function(data) {
+                $('#editBeerUpdateFailed').fadeIn();
+            }
         });
     });
 
@@ -446,15 +503,25 @@
             var updateURL = "";
 
             if (floor == "tech"){
-                updateURL = 'http://whatsinthekeg.com:1337/beer/update/'+currentBeerID+'?currentTechBeer=false';
+                updateURL = window.apiURL+'/update/'+currentBeerID+'?currentTechBeer=false';
             }
 
             else if (floor == "edit"){
-                updateURL = 'http://whatsinthekeg.com:1337/beer/update/'+currentBeerID+'?currentEditBeer=false';
+                updateURL = window.apiURL+'/update/'+currentBeerID+'?currentEditBeer=false';
             }
 
             $.ajax({
                 url: updateURL,
+                type: 'get',
+                async: false,
+                success: function(data) {
+                    setLastOnTapForPreviousBeer(data.id, data.updatedAt);
+                } 
+            });
+        }
+        function setLastOnTapForPreviousBeer(previousBeerID, dateRemovedFromKeg){
+            $.ajax({
+                url: window.apiURL+'/update/'+previousBeerID+'?lastOnTap='+dateRemovedFromKeg,
                 type: 'get',
                 async: false,
                 success: function(data) {
@@ -500,6 +567,13 @@
                     return false;
                 }
             }
+        });
+    });
+
+    //Hiding alerts
+    $(function(){
+        $("[data-hide]").on("click", function(){
+            $(this).closest("." + $(this).attr("data-hide")).hide();
         });
     });
     </script>
