@@ -182,7 +182,7 @@
             }
             else{
                 var $lastOnTapDate = new Date((beers[j].lastOnTap || "").replace(/-/g,"/").replace(/[TZ]/g," ")).toString();;
-                $lastOnTapDate = $lastOnTap.split(/ [0-9][0-9]:/)[0];
+                $lastOnTapDate = $lastOnTapDate.split(/ [0-9][0-9]:/)[0];
                 $lastOnTap = $("<button>",{class:'btn-xs btn-warning', 'type': 'button'});
                 $lastOnTap.html($lastOnTapDate);
             }
