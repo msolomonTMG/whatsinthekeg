@@ -124,7 +124,7 @@
                                         <th>Beer</th>
                                         <th>Last on tap</th>
                                         <th>Likes</th>
-                                        <th class="text-center">Comments</th>
+                                        <th class="text-center hidden-xs">Comments</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tableBody">
@@ -193,7 +193,7 @@
         var $tdLikeButton = $("<div>", {id: 'likeButton'+beers[j].id, class: 'fb-like', 'data-href': window.apiURL+beers[j].id, 'data-layout': 'button_count', 'data-action': 'like', 'data-show-faces': 'true', 'data-share':'false'});
             $tdLikes.append($tdLikeButton);
 
-        var $tdCommentsButton = $("<td>", {class: "text-vertical-center comments-expand"});
+        var $tdCommentsButton = $("<td>", {class: "text-vertical-center comments-expand hidden-xs"});
             $tdCommentsButton.html('<i class="fa fa-caret-down"></i></td>');
 
         var $trHidden = $("<tr>");
