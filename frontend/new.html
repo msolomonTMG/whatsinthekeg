@@ -417,7 +417,7 @@
         var imgurl = $('#newBeerImage').val();
         var website = $('#newBeerWebsite').val();
         $.ajax({
-            url: window.apiURL+'/create/?name='+name+'&imgurl='+imgurl+'&website='+website+'&lastOnTap="never"',
+            url: window.apiURL+'/create/?name='+name+'&imgurl='+imgurl+'&website='+website+'&lastOnTap=never',
             type: 'get',
             async: false,
             success: function(data) {
