@@ -177,13 +177,13 @@
                 $lastOnTap.html('In the keg!');
             }
             else if(beers[j].lastOnTap == undefined){
-                $lastOnTap = $("<button>",{class:'btn-xs btn-alert', 'type': 'button'});
+                $lastOnTap = $("<button>",{class:'btn-xs btn-danger', 'type': 'button'});
                 $lastOnTap.html('No history');
             }
             else{
                 var $lastOnTapDate = new Date((beers[j].lastOnTap || "").replace(/-/g,"/").replace(/[TZ]/g," ")).toString();;
                 $lastOnTapDate = $lastOnTap.split(/ [0-9][0-9]:/)[0];
-                $lastOnTap = $("<button>",{class:'btn-xs btn-alert', 'type': 'button'});
+                $lastOnTap = $("<button>",{class:'btn-xs btn-warning', 'type': 'button'});
                 $lastOnTap.html($lastOnTapDate);
             }
 
