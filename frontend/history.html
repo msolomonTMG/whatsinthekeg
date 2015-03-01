@@ -176,6 +176,10 @@
                 $lastOnTap = $("<button>",{class:'btn-xs btn-success', 'type': 'button'});
                 $lastOnTap.html('In the keg!');
             }
+            else if(beers[j].lastOnTap == undefined){
+                $lastOnTap = $("<button>",{class:'btn-xs btn-warning', 'type': 'button'});
+                $lastOnTap.html('No history');
+            }
             else{
                 $lastOnTap = new Date((beers[j].lastOnTap || "").replace(/-/g,"/").replace(/[TZ]/g," ")).toString();;
                 $lastOnTap = $lastOnTap.split(/ [0-9][0-9]:/)[0];
