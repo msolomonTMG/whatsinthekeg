@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Whatsinthekeg</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        /* Hide hidden table rows */
+        .hiddenRow {
+            padding: 0 !important;
+            border: none !important;
+        }
+        .comments-expand{
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--Facebook stuff-->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=864912060217573&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- desktop nav -->
+    <nav class="navbar navbar-default navbar-fixed-top hidden-sm hidden-xs">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">What's in the Keg?</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-caret-down"></i></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#"><i class="fa fa-heart"></i> Favorites</a></li>
+                <li class="active"><a href="#"><i class="fa fa-history"></i> History</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">About</li>
+                <li><a href="#"><i class="fa fa-question-circle"></i> What is this</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <!-- tablet nav -->
+    <nav class="navbar navbar-default navbar-fixed-top visible-sm hidden-xs">
+      <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">What's in the Keg?</a>
+              <ul class="nav navbar-nav list-inline">
+                <li><a href="#"><i class="fa fa-heart"></i> Favorites</a></li>
+                <li class="active"><a href="#"><i class="fa fa-history"></i> History</a></li>
+                <li><a href="#"><i class="fa fa-question-circle"></i> What is this</a></li>
+              </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- phone nav -->
+    <nav class="navbar navbar-default navbar-fixed-top hidden-sm visible-xs">
+      <div class="container">
+        <div class="row">
+            <a class="navbar-brand" href="/">What's in the Keg?</a>
+            <div class="pull-right">
+                <a class="navbar-brand" href="#"><i class="fa fa-heart"></i></a>
+                <a class="navbar-brand" href="#"><i class="fa fa-history"></i></a>
+                <a class="navbar-brand" href="#"><i class="fa fa-question-circle"></i></a>
+            </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="container" style="margin-top:30px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                      <!-- Default panel contents -->
+                      <div class="panel-heading"><i class="fa fa-history"></i> History</div>
+                      <div class="panel-body">
+
+                          <!-- Table -->
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Beer</th>
+                                        <th>Last on tap</th>
+                                        <th>Likes</th>
+                                        <th class="text-center">Comments</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Whatsinthekeg -->
+    <script src="js/whatsinthekeg.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    var beers;
+
+    $.ajax({
+        url: window.apiURL,
+        type: 'get',
+        async: false,
+        success: function(data) {
+            beers = data;
+        },
+        error: function(data) {
+            console.log(data);
+            alert("cant get beers");
+        }
+    });
+
+    var j = 0;
+
+    while (j < beers.length){
+        var $tr = $("<tr>", {id: 'row'+beers[j].id, class: 'accordion-toggle', 'data-toggle': 'collapse', 'data-target': '#comments'+beers[j].id});
+        var $th = $("<th>", {'scope': 'row'});
+            $th.html(beers[j].name);
+
+        var $tdDate = $("<td>", {id: 'date'+beers[j].id});
+            var $lastOnTap
+            if (beers[j].currentTechBeer == "true" || beers[j].currentEditBeer == "true"){
+                $lastOnTap = $("<button>",{class:'btn-xs btn-success', 'type': 'button'});
+                $lastOnTap.html('In the keg!');
+            }
+            else{
+                $lastOnTap = new Date((beers[j].lastOnTap || "").replace(/-/g,"/").replace(/[TZ]/g," ")).toString();;
+                $lastOnTap = $lastOnTap.split(/ [0-9][0-9]:/)[0];
+            }
+
+            $tdDate.html($lastOnTap);
+        
+        var $tdLikes = $("<td>", {id: 'likes'+beers[j].id});
+        var $tdLikeButton = $("<div>", {id: 'likeButton'+beers[j].id, class: 'fb-like', 'data-href': window.apiURL+beers[j].id, 'data-layout': 'button_count', 'data-action': 'like', 'data-show-faces': 'true', 'data-share':'false'});
+            $tdLikes.append($tdLikeButton);
+
+        var $tdCommentsButton = $("<td>", {class: "text-vertical-center comments-expand"});
+            $tdCommentsButton.html('<i class="fa fa-caret-down"></i></td>');
+
+        var $trHidden = $("<tr>");
+        var $tdHidden = $("<td>", {'colspan': '4', class: 'hiddenRow'});
+        var $divHidden = $("<div>", {id: 'comments'+beers[j].id, class: 'accordian-body collapse'});
+        var $commentsHidden = $("<div>", {id: 'comments'+beers[j].id, class: 'fb-comments', 'data-href': window.apiURL+beers[j].id, 'data-width': "100%", 'data-numposts':'5', 'data-colorscheme': 'light'});
+            $divHidden.append($commentsHidden);
+
+
+        $tr.append($th);
+        $tr.append($tdDate);
+        $tr.append($tdLikes);
+        $tr.append($tdCommentsButton);
+
+        $tdHidden.append($divHidden);
+        $trHidden.append($tdHidden);
+
+        $('#tableBody').append($tr);
+        $('#tableBody').append($trHidden);
+
+        j++;
+    }
+
+    var i = 0;
+    while (i < beers.length){
+        if (beers[i].currentTechBeer == "true"){
+            var techBeer = beers[i];
+            techBeer.time = new Date((beers[i].updatedAt || "").replace(/-/g,"/").replace(/[TZ]/g," ")).toString();;
+            $('#techBeerName').html(techBeer.name);
+            $('#techBeerImg').attr("src",techBeer.imgurl);
+            $('#techBeerSite').attr("href", techBeer.website);
+            $('#techBeerTime').html(techBeer.time.split(' 2015')[0]);
+            
+            //Build social stuff
+            var $techBeerLikes = $("<div>", {id: 'techBeerLikes', class: 'fb-like', 'data-href': window.apiURL+techBeer.id, 'data-layout': 'button_count', 'data-action': 'like', 'data-show-faces': 'true', 'data-share':'false'});
+            $('#techBeerLikesPosition').append($techBeerLikes);
+
+            var $techBeerComments = $("<div>", {id: 'techBeerComments', class: 'fb-comments', 'data-href': window.apiURL+techBeer.id, 'data-width': "100%", 'data-numposts':'5', 'data-colorscheme': 'light'});
+            $('#techBeerCommentsPosition').append($techBeerComments);
+            //$('#demo1').append($techBeerComments);
+
+        }
+        if(beers[i].currentEditBeer == "true"){
+            var editBeer = beers[i];
+            editBeer.time = new Date((beers[i].updatedAt || "").replace(/-/g,"/").replace(/[TZ]/g," ")).toString();;
+            $('#editBeerName').html(editBeer.name);
+            $('#editBeerImg').attr("src",editBeer.imgurl);
+            $('#editBeerSite').attr("href", editBeer.website);
+            $('#editBeerTime').html(editBeer.time.split(' 2015')[0]);
+            
+            //Build social stuff
+            var $editBeerLikes = $("<div>", {id: 'editBeerLikes', class: 'fb-like', 'data-href': window.apiURL+editBeer.id, 'data-layout': 'button_count', 'data-action': 'like', 'data-show-faces': 'true', 'data-share':'false'});
+            $('#editBeerLikesPosition').append($editBeerLikes);
+
+            var $editBeerComments = $("<div>", {id: 'editBeerComments', class: 'fb-comments', 'data-href': window.apiURL+editBeer.id, 'data-width': "100%", 'data-numposts':'5', 'data-colorscheme': 'light'});
+            $('#editBeerCommentsPosition').append($editBeerComments);
+        }
+        i++;
+    }
+
+    //tool tips
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+</body>
+
+</html>
