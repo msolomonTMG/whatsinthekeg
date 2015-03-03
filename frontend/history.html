@@ -172,7 +172,7 @@
 
         var $tdDate = $("<td>", {id: 'date'+beers[j].id});
             var $lastOnTap
-            if (beers[j].currentTechBeer == "true" || beers[j].currentEditBeer == "true"){
+            if (beers[j].currentTechBeer == "true" || beers[j].currentEditBeer == "true" || beers[j].currentJtBeer == "true"){
                 $lastOnTap = $("<button>",{class:'btn-xs btn-success', 'type': 'button'});
                 $lastOnTap.html('In the keg!');
             }
@@ -199,7 +199,7 @@
         var $trHidden = $("<tr>");
         var $tdHidden = $("<td>", {'colspan': '4', class: 'hiddenRow'});
         var $divHidden = $("<div>", {id: 'comments'+beers[j].id, class: 'accordian-body collapse'});
-        var $commentsHidden = $("<div>", {id: 'comments'+beers[j].id, class: 'fb-comments', 'data-href': window.apiURL+'/'+beers[j].id, 'data-width': "100%", 'data-numposts':'5', 'data-colorscheme': 'light'});
+        var $commentsHidden = $("<div>", {id: 'commentsWidget'+beers[j].id, class: 'fb-comments', 'data-href': window.apiURL+'/'+beers[j].id, 'data-width': "90%", 'data-numposts':'5', 'data-colorscheme': 'light'});
             $divHidden.append($commentsHidden);
 
 
@@ -215,43 +215,6 @@
         $('#tableBody').append($trHidden);
 
         j++;
-    }
-
-    var i = 0;
-    while (i < beers.length){
-        if (beers[i].currentTechBeer == "true"){
-            var techBeer = beers[i];
-            techBeer.time = new Date((beers[i].updatedAt || "").replace(/-/g,"/").replace(/[TZ]/g," ")).toString();;
-            $('#techBeerName').html(techBeer.name);
-            $('#techBeerImg').attr("src",techBeer.imgurl);
-            $('#techBeerSite').attr("href", techBeer.website);
-            $('#techBeerTime').html(techBeer.time.split(' 2015')[0]);
-            
-            //Build social stuff
-            var $techBeerLikes = $("<div>", {id: 'techBeerLikes', class: 'fb-like', 'data-href': window.apiURL+'/'+techBeer.id, 'data-layout': 'button_count', 'data-action': 'like', 'data-show-faces': 'true', 'data-share':'false'});
-            $('#techBeerLikesPosition').append($techBeerLikes);
-
-            var $techBeerComments = $("<div>", {id: 'techBeerComments', class: 'fb-comments', 'data-href': window.apiURL+'/'+techBeer.id, 'data-width': "100%", 'data-numposts':'5', 'data-colorscheme': 'light'});
-            $('#techBeerCommentsPosition').append($techBeerComments);
-            //$('#demo1').append($techBeerComments);
-
-        }
-        if(beers[i].currentEditBeer == "true"){
-            var editBeer = beers[i];
-            editBeer.time = new Date((beers[i].updatedAt || "").replace(/-/g,"/").replace(/[TZ]/g," ")).toString();;
-            $('#editBeerName').html(editBeer.name);
-            $('#editBeerImg').attr("src",editBeer.imgurl);
-            $('#editBeerSite').attr("href", editBeer.website);
-            $('#editBeerTime').html(editBeer.time.split(' 2015')[0]);
-            
-            //Build social stuff
-            var $editBeerLikes = $("<div>", {id: 'editBeerLikes', class: 'fb-like', 'data-href': window.apiURL+'/'+editBeer.id, 'data-layout': 'button_count', 'data-action': 'like', 'data-show-faces': 'true', 'data-share':'false'});
-            $('#editBeerLikesPosition').append($editBeerLikes);
-
-            var $editBeerComments = $("<div>", {id: 'editBeerComments', class: 'fb-comments', 'data-href': window.apiURL+'/'+editBeer.id, 'data-width': "100%", 'data-numposts':'5', 'data-colorscheme': 'light'});
-            $('#editBeerCommentsPosition').append($editBeerComments);
-        }
-        i++;
     }
 
     //tool tips
