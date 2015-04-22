@@ -1,1 +1,0 @@
-window.apiURL = 'http://212.47.235.161:1337/beer';
