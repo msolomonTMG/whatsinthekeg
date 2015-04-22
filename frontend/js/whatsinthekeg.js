@@ -1,1 +1,0 @@
-window.apiURL = 'http://whatsinthekeg.com:1337/beer';
