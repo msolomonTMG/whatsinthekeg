@@ -1,0 +1,96 @@
+<h1> Beer </h1>
+<div>Name: <%= beers[0].name %> </div>
+<% var beer = beers[0]; %>
+
+<!-- desktop nav -->
+<nav class="navbar navbar-default navbar-fixed-top hidden-sm hidden-xs">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">What's in the Keg?</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#"><i class="fa fa-heart"></i> Favorites</a></li>
+            <li><a href="/history.html"><i class="fa fa-history"></i> History</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">About</li>
+            <li><a href="#"><i class="fa fa-question-circle"></i> What is this</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+<!-- tablet nav -->
+<nav class="navbar navbar-default navbar-fixed-top visible-sm hidden-xs">
+  <div class="container">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/">What's in the Keg?</a>
+          <ul class="nav navbar-nav list-inline">
+            <li><a href="#"><i class="fa fa-heart"></i> Favorites</a></li>
+            <li><a href="/history.html"><i class="fa fa-history"></i> History</a></li>
+            <li><a href="#"><i class="fa fa-question-circle"></i> What is this</a></li>
+          </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- phone nav -->
+<nav class="navbar navbar-default navbar-fixed-top hidden-sm visible-xs">
+  <div class="container">
+    <div class="row">
+        <a class="navbar-brand" href="/">What's in the Keg?</a>
+        <div class="pull-right">
+            <a class="navbar-brand" href="#"><i class="fa fa-heart"></i></a>
+            <a class="navbar-brand" href="/history.html"><i class="fa fa-history"></i></a>
+            <a class="navbar-brand" href="#"><i class="fa fa-question-circle"></i></a>
+        </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<header id="top" class="header">
+    <div class="container" style="margin-top:30px;">
+    <div class="row text-vertical-center">
+        <div class="col-md-8 col-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <span class="pull-left" data-toggle="tooltip" data-placement="bottom" title="On tap since">
+                                <i class="fa fa-calendar-o"></i> <span id="beerTime"></span>
+                            </span>
+                        </div>
+                        <div class="col-xs-4">
+                            
+                        </div>
+                        <div class="col-xs-4">
+                            <span class="pull-right" id="beerLikesPosition">
+
+                            </span>
+                        </div>  
+                    </div>                
+                </div>
+                <div class="panel-body">
+                    <h4 id="beerName"><%= beer.name %></h4> 
+                    <div class="portfolio-item">
+                        <a href="#" id="beerSite" target="_blank">
+                            <img id="beerImg" class="img-portfolio img-responsive" src="<%= beer.imgurl %>">
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-footer" id="beerCommentsPosition" style="overflow:hidden;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</header>

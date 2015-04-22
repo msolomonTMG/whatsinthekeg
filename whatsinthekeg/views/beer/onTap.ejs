@@ -1,0 +1,176 @@
+<h1>Beers</h1>
+<% var i=0; while (i < beers.length) {
+	if (beers[i].currentTechBeer == true){
+		var techBeer = beers[i];
+	}
+	else if (beers[i].currentEditBeer == true){
+		var editBeer = beers[i];
+	}
+	else if (beers[i].currentJtBeer == true){
+		var jtBeer = beers[i];
+	}
+	i++; 
+} %>
+
+<ul>
+	<li><%= techBeer.name %></li>
+	<li><%= editBeer.name %></li>
+	<li><%= jtBeer.name %></li>
+</ul>
+
+<!-- desktop nav -->
+<nav class="navbar navbar-default navbar-fixed-top hidden-sm hidden-xs">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">What's in the Keg?</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#"><i class="fa fa-heart"></i> Favorites</a></li>
+            <li><a href="/history.html"><i class="fa fa-history"></i> History</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">About</li>
+            <li><a href="#"><i class="fa fa-question-circle"></i> What is this</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+<!-- tablet nav -->
+<nav class="navbar navbar-default navbar-fixed-top visible-sm hidden-xs">
+  <div class="container">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/">What's in the Keg?</a>
+          <ul class="nav navbar-nav list-inline">
+            <li><a href="#"><i class="fa fa-heart"></i> Favorites</a></li>
+            <li><a href="/history.html"><i class="fa fa-history"></i> History</a></li>
+            <li><a href="#"><i class="fa fa-question-circle"></i> What is this</a></li>
+          </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- phone nav -->
+<nav class="navbar navbar-default navbar-fixed-top hidden-sm visible-xs">
+  <div class="container">
+    <div class="row">
+        <a class="navbar-brand" href="/">What's in the Keg?</a>
+        <div class="pull-right">
+            <a class="navbar-brand" href="#"><i class="fa fa-heart"></i></a>
+            <a class="navbar-brand" href="/history.html"><i class="fa fa-history"></i></a>
+            <a class="navbar-brand" href="#"><i class="fa fa-question-circle"></i></a>
+        </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<header id="top" class="header">
+    <div class="container" style="margin-top:30px;">
+    <div class="text-vertical-center">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <span class="pull-left" data-toggle="tooltip" data-placement="bottom" title="On tap since">
+                                <i class="fa fa-calendar-o"></i> <span id="techBeerTime"></span>
+                            </span>
+                        </div>
+                        <div class="col-xs-4">
+                            Tech
+                        </div>
+                        <div class="col-xs-4">
+                            <span class="pull-right" id="techBeerLikesPosition">
+
+                            </span>
+                        </div>  
+                    </div>                
+                </div>
+                <div class="panel-body">
+                    <h4 id="techBeerName"><a href="/beer/show/<%= techBeer.id %>"> <%= techBeer.name %> </a></h4> 
+                    <div class="portfolio-item">
+                        <a href="#" id="techBeerSite" target="_blank">
+                            <img id="techBeerImg" class="img-portfolio img-responsive" src="<%= techBeer.imgurl %>">
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-footer" id="techBeerCommentsPosition" style="overflow:hidden;">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <span class="pull-left" data-toggle="tooltip" data-placement="bottom" title="On tap since">
+                                <i class="fa fa-calendar-o"></i> <span id="editBeerTime"></span>
+                            </span>
+                        </div>
+                        <div class="col-xs-4">
+                            Edit
+                        </div>
+                        <div class="col-xs-4">
+                            <span class="pull-right" id="editBeerLikesPosition">
+                                
+                            </span>
+                        </div>  
+                    </div>   
+                </div>
+                <div class="panel-body">
+                    <h4 id="editBeerName"><%= editBeer.name %></h4> 
+                    <div class="portfolio-item">
+                        <a href="#" id="editBeerSite" target="_blank">
+                            <img id="editBeerImg" class="img-portfolio img-responsive" src="<%= editBeer.imgurl %>">
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-footer" id="editBeerCommentsPosition" style="overflow:hidden;">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <span class="pull-left" data-toggle="tooltip" data-placement="bottom" title="On tap since">
+                                <i class="fa fa-calendar-o"></i> <span id="jtBeerTime"></span>
+                            </span>
+                        </div>
+                        <div class="col-xs-4">
+                            JackThreads
+                        </div>
+                        <div class="col-xs-4">
+                            <span class="pull-right" id="jtBeerLikesPosition">
+                                
+                            </span>
+                        </div>  
+                    </div>   
+                </div>
+                <div class="panel-body">
+                    <h4 id="jtBeerName"><%= jtBeer.name %></h4> 
+                    <div class="portfolio-item">
+                        <a href="#" id="jtBeerSite" target="_blank">
+                            <img id="jtBeerImg" class="img-portfolio img-responsive" src="<%= jtBeer.imgurl %>">
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-footer" id="jtBeerCommentsPosition" style="overflow:hidden;">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</header>

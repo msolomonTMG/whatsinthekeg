@@ -1,0 +1,280 @@
+<!-- Header -->
+<header id="top" class="header">
+    <div class="container" style="margin-top:30px;">
+    <div class="text-vertical-center">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Tech</div>
+                    <div class="panel-body">
+
+                    <!-- Update Success Alert -->
+                        <div class="row">
+                            <div clas="container">
+                                <div class="col-md-12">
+                                    <div id="techBeerUpdated" class="alert alert-success" hidden="hidden" role="alert">
+                                        <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <strong>Success!</strong> Tech's beer was updated!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- End success alert -->
+                
+                    <!-- Update Failed Alert -->
+                        <div class="row">
+                            <div clas="container">
+                                <div class="col-md-12">
+                                    <div id="techBeerUpdateFailed" class="alert alert-danger" hidden="hidden" role="alert">
+                                        <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <strong>Shit!</strong> Something went wrong, couldn't update tech's beer!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- End success alert -->
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <select class="form-control" id="techBeerOptions">
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <button type="button" class="btn btn-primary" id="updateTechBeer">New Beer for Tech!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Edit</div>
+                    <div class="panel-body">
+
+                    <!-- Update Success Alert -->
+                        <div class="row">
+                            <div clas="container">
+                                <div class="col-md-12">
+                                    <div id="editBeerUpdated" class="alert alert-success" hidden="hidden" role="alert">
+                                        <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <strong>Success!</strong> Edit's beer was updated!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- End success alert -->
+                
+                    <!-- Update Failed Alert -->
+                        <div class="row">
+                            <div clas="container">
+                                <div class="col-md-12">
+                                    <div id="editBeerUpdateFailed" class="alert alert-danger" hidden="hidden" role="alert">
+                                        <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <strong>Shit!</strong> Something went wrong, couldn't update edit's beer!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- End success alert -->
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <select class="form-control" id="editBeerOptions">
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                        </form>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <button type="button" class="btn btn-primary" id="updateEditBeer">New Beer for Edit!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">JackThreads</div>
+                    <div class="panel-body">
+
+                    <!-- Update Success Alert -->
+                        <div class="row">
+                            <div clas="container">
+                                <div class="col-md-12">
+                                    <div id="jtBeerUpdated" class="alert alert-success" hidden="hidden" role="alert">
+                                        <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <strong>Success!</strong> JackThreads's beer was updated!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- End success alert -->
+                
+                    <!-- Update Failed Alert -->
+                        <div class="row">
+                            <div clas="container">
+                                <div class="col-md-12">
+                                    <div id="jtBeerUpdateFailed" class="alert alert-danger" hidden="hidden" role="alert">
+                                        <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <strong>Shit!</strong> Something went wrong, couldn't update JackThread's beer!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- End success alert -->
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <select class="form-control" id="jtBeerOptions">
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                        </form>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <button type="button" class="btn btn-primary" id="updateJtBeer">New Beer for JackThreads!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Add New Beer</div>
+                    <div class="panel-body">
+
+
+                    <!-- Update Success Alert -->
+                        <div class="row">
+                            <div clas="container">
+                                <div class="col-md-12">
+                                    <div id="newBeerAdded" class="alert alert-success" hidden="hidden" role="alert">
+                                        <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <strong>Success!</strong> New beer added!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- End success alert -->
+                
+                    <!-- Update Failed Alert -->
+                        <div class="row">
+                            <div clas="container">
+                                <div class="col-md-12">
+                                    <div id="newBeerFailed" class="alert alert-danger" hidden="hidden" role="alert">
+                                        <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <strong>Shit!</strong> Something went wrong, couldn't save that brew!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- End success alert -->
+                        <form class="form-horizontal" action="/beer/create" method="POST">
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-beer"></i></span>
+                                        <input name="name" type="text" class="form-control input-lg" id="newBeerName" placeholder="Beer Name">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-camera"></i></span>
+                                        <input name="imgurl" type="text" class="form-control input-lg" id="newBeerImage" placeholder="Image URL">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+                                        <input name="website" type="text" class="form-control input-lg" id="newBeerWebsite" placeholder="Beer Website">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group hidden">
+                                <div class="col-xs-12">
+                                    <div class="input-group">
+                                        <input name="currentTechBeer" value="false" type="hidden" class="form-control input-lg" id="newBeerWebsite" placeholder="Beer Website">
+                                        <input name="currentEditBeer" value="false" type="hidden" class="form-control input-lg" id="newBeerWebsite" placeholder="Beer Website">
+                                        <input name="currentJtBeer" value="false" type="hidden" class="form-control input-lg" id="newBeerWebsite" placeholder="Beer Website">
+                                        <input name="lastOnTap" value="never" type="hidden" class="form-control input-lg" id="newBeerWebsite" placeholder="Beer Website">
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <button type="submit" class="btn btn-success" id="createNewBeer">Add New Beer!</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Delete a Beer</div>
+                    <div class="panel-body">
+
+                    <!-- Update Success Alert -->
+                        <div class="row">
+                            <div clas="container">
+                                <div class="col-md-12">
+                                    <div id="deleteBeerConfirmed" class="alert alert-success" hidden="hidden" role="alert">
+                                        <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <strong>Good riddance!</strong> Successfully deleted that beer!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- End success alert -->
+                
+                    <!-- Update Failed Alert -->
+                        <div class="row">
+                            <div clas="container">
+                                <div class="col-md-12">
+                                    <div id="deleteBeerFailed" class="alert alert-danger" hidden="hidden" role="alert">
+                                        <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <strong>Shit!</strong> Something went wrong, couldn't delete that brew!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- End success alert -->
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <select class="form-control" id="deleteBeerOptions">
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <button type="button" class="btn btn-danger" id="deleteBeerWarning" data-toggle="modal" data-target="#deleteWarningModal">Delete a Beer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+</header>
+<%- block('localScripts', '<script src="/localjs/settings.js"></script>') %>
